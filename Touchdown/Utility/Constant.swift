@@ -13,6 +13,7 @@ struct Constant {
         static let players: [Players] = Bundle.main.decode("player.json")
         static let categories: [CategoriesModel] = Bundle.main.decode("category.json")
         static let products: [ProductsModel] = Bundle.main.decode("product.json")
+        static let brands: [BrandsModel] = Bundle.main.decode("brand.json")
     }
     
     struct Colors {

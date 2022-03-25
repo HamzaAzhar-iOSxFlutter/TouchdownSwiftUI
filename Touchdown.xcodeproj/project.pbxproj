@@ -25,6 +25,9 @@
 		BB1750FA27E3EE500089584F /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1750F927E3EE500089584F /* TitleView.swift */; };
 		BB1750FC27E3EF0C0089584F /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1750FB27E3EF0C0089584F /* ProductModel.swift */; };
 		BB1750FE27E3EFA70089584F /* ProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1750FD27E3EFA70089584F /* ProductItemView.swift */; };
+		BB336C0C27EDEA2E0092633F /* BrandViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB336C0B27EDEA2E0092633F /* BrandViewItem.swift */; };
+		BB336C0E27EDEA650092633F /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB336C0D27EDEA650092633F /* BrandsModel.swift */; };
+		BB336C1027EDED400092633F /* BrandGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB336C0F27EDED400092633F /* BrandGridView.swift */; };
 		BBACA90427E346A900BEEEFF /* TouchdownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACA90327E346A900BEEEFF /* TouchdownApp.swift */; };
 		BBACA90627E346A900BEEEFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBACA90527E346A900BEEEFF /* ContentView.swift */; };
 		BBACA90827E346A900BEEEFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBACA90727E346A900BEEEFF /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 		BB1750F927E3EE500089584F /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		BB1750FB27E3EF0C0089584F /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		BB1750FD27E3EFA70089584F /* ProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemView.swift; sourceTree = "<group>"; };
+		BB336C0B27EDEA2E0092633F /* BrandViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandViewItem.swift; sourceTree = "<group>"; };
+		BB336C0D27EDEA650092633F /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
+		BB336C0F27EDED400092633F /* BrandGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandGridView.swift; sourceTree = "<group>"; };
 		BBACA90027E346A900BEEEFF /* Touchdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Touchdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBACA90327E346A900BEEEFF /* TouchdownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchdownApp.swift; sourceTree = "<group>"; };
 		BBACA90527E346A900BEEEFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 				BB1750DC27E3D66F0089584F /* PlayerModel.swift */,
 				BB1750EC27E3DF4B0089584F /* CategoriesModel.swift */,
 				BB1750FB27E3EF0C0089584F /* ProductModel.swift */,
+				BB336C0D27EDEA650092633F /* BrandsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 		BB1750D727E354260089584F /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				BB336C0A27EDEA1B0092633F /* BrandView */,
 				BB1750F827E3EE3B0089584F /* ProductView */,
 				BB1750F727E3ECEC0089584F /* FooterView */,
 				BB1750F527E3ECD30089584F /* NavigationBarView */,
@@ -184,6 +192,15 @@
 				BB1750FD27E3EFA70089584F /* ProductItemView.swift */,
 			);
 			path = ProductView;
+			sourceTree = "<group>";
+		};
+		BB336C0A27EDEA1B0092633F /* BrandView */ = {
+			isa = PBXGroup;
+			children = (
+				BB336C0B27EDEA2E0092633F /* BrandViewItem.swift */,
+				BB336C0F27EDED400092633F /* BrandGridView.swift */,
+			);
+			path = BrandView;
 			sourceTree = "<group>";
 		};
 		BBACA8F727E346A900BEEEFF = {
@@ -316,7 +333,9 @@
 				BB1750FC27E3EF0C0089584F /* ProductModel.swift in Sources */,
 				BB1750D627E350FE0089584F /* FooterView.swift in Sources */,
 				BB1750E127E3D9260089584F /* SliderView.swift in Sources */,
+				BB336C0E27EDEA650092633F /* BrandsModel.swift in Sources */,
 				BBACA90427E346A900BEEEFF /* TouchdownApp.swift in Sources */,
+				BB336C1027EDED400092633F /* BrandGridView.swift in Sources */,
 				BB1750ED27E3DF4B0089584F /* CategoriesModel.swift in Sources */,
 				BB1750D127E350220089584F /* Constant.swift in Sources */,
 				BB1750F327E3EA7E0089584F /* SectionView.swift in Sources */,
@@ -325,6 +344,7 @@
 				BB1750DD27E3D66F0089584F /* PlayerModel.swift in Sources */,
 				BB1750EF27E3E7400089584F /* CategoryItemView.swift in Sources */,
 				BB1750DF27E3D6C40089584F /* BundleExtension.swift in Sources */,
+				BB336C0C27EDEA2E0092633F /* BrandViewItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +485,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +517,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
