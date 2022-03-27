@@ -14,6 +14,7 @@ struct Constant {
         static let categories: [CategoriesModel] = Bundle.main.decode("category.json")
         static let products: [ProductsModel] = Bundle.main.decode("product.json")
         static let brands: [BrandsModel] = Bundle.main.decode("brand.json")
+        static let product: ProductsModel = products[0]
     }
     
     struct Colors {
@@ -27,5 +28,9 @@ struct Constant {
         static var gridLayout: [GridItem] {
             return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
         }
+    }
+    
+    struct Haptic {
+        static let feedback = UIImpactFeedbackGenerator(style: .medium)
     }
 }

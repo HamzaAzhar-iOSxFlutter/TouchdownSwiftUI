@@ -9,34 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @EnvironmentObject var shop: Shop
+    
     var body: some View {
         ZStack {
-            VStack {
-                NavigationBarView()
-                    .padding(.horizontal, 15)
-                    .padding(.bottom)
-                    .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 0) {
-                        self.buildSliderView()
-                        self.buildCategoryGridView()
-                        TitleView(title: "Helmets")
-                        self.buildProductsGrid()
-                        TitleView(title: "Brands")
-                        self.buildBrandGridView()
-                        
-                        self.buildFooterView()
+            if shop.showingProduct == false && shop.selectedProduct == nil {
+                VStack {
+                    NavigationBarView()
+                        .padding(.horizontal, 15)
+                        .padding(.bottom)
+                        .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 0) {
+                            self.buildSliderView()
+                            self.buildCategoryGridView()
+                            TitleView(title: "Helmets")
+                            self.buildProductsGrid()
+                            TitleView(title: "Brands")
+                            self.buildBrandGridView()
+                            
+                            self.buildFooterView()
+                        }
                     }
                 }
-            }.background(Constant.Colors.colorBackground.ignoresSafeArea(.all, edges: .all))
+                .background(Constant.Colors.colorBackground.ignoresSafeArea(.all, edges: .all))
+            } else {
+                ProductDetailView()
+            }
         }.ignoresSafeArea(.all, edges: .top)
     }
     
     fileprivate func buildSliderView() -> some View {
         return(SliderView()
-                .frame(width: 420, height: 250, alignment: .center)
-                .padding(.vertical, 20))
+                .frame(height: UIScreen.main.bounds.width / 1.475)
+        )
     }
     
     fileprivate func buildCategoryGridView() -> some View {
@@ -48,6 +55,13 @@ struct ContentView: View {
         return (LazyVGrid(columns: Constant.Layout.gridLayout, spacing: 15) {
             ForEach(Constant.Data.products) { product in
                 ProductItemView(product: product)
+                    .onTapGesture {
+                        Constant.Haptic.feedback.impactOccurred()
+                        withAnimation(.easeOut) {
+                            self.shop.selectedProduct = product
+                            self.shop.showingProduct = true
+                        }
+                    }
             }
         } .padding(15))
     }
@@ -65,5 +79,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Shop())
     }
 }
